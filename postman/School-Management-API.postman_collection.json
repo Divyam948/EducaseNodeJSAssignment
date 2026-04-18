@@ -1,9 +1,11 @@
 {
   "info": {
-    "_postman_id": "0a2c9b79-f2ca-4d56-9cb8-63b8391f0bcc",
+    "_postman_id": "1beed5c0-f878-4a63-8ec2-9e3456aeebfc",
     "name": "School Management API",
+    "description": "Postman collection for adding schools and listing them by proximity.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": "Postman collection for adding schools and listing them by proximity."
+    "_exporter_id": "54107688",
+    "_collection_link": "https://go.postman.co/collection/54107688-1beed5c0-f878-4a63-8ec2-9e3456aeebfc?source=collection_link"
   },
   "item": [
     {
@@ -18,7 +20,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Fertilizer Public School\",\n  \"address\": \"Kribhco Shyam Nagar, Piprola, Jalalabad Road, Shahjahanpur, Uttar Pradesh\",\n  \"latitude\": 27.883743,\n  \"longitude\": 79.91225\n}"
+          "raw": "{\n  \"name\": \"Fertilizer Public School\",\n  \"address\": \"Kribhco Shyam Nagar, Piprola, Jalalabad Road, Shahjahanpur, Uttar Pradesh\",\n  \"latitude\": 27.883743,\n  \"longitude\": 79.91225\n}\n"
         },
         "url": {
           "raw": "{{baseUrl}}/addSchool",
@@ -62,10 +64,34 @@
       "response": []
     }
   ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
   "variable": [
     {
       "key": "baseUrl",
-      "value": "http://localhost:3000"
+      "value": "https://educasenodejsassignment-production.up.railway.app"
     },
     {
       "key": "userLatitude",
