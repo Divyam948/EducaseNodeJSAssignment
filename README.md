@@ -69,6 +69,16 @@ Or:
 npm start
 ```
 
+## Live deployment
+
+- Platform: `Railway`
+- Base URL: `https://educasenodejsassignment-production.up.railway.app`
+
+Live endpoints:
+
+- `POST https://educasenodejsassignment-production.up.railway.app/addSchool`
+- `GET https://educasenodejsassignment-production.up.railway.app/listSchools?latitude=27.883743&longitude=79.91225`
+
 ## Environment variables
 
 ```env
@@ -158,14 +168,16 @@ Example success response:
 
 ## Postman
 
-Import `postman/School-Management-API.postman_collection.json` into Postman.
-It already includes:
+The project includes a Postman collection in `postman/School-Management-API.postman_collection.json`.
+
+For final submission and live API testing, use the Postman collection exported from Postman after updating `baseUrl` to the Railway deployment URL.
+
+The collection includes:
 
 - example request for adding a school
 - example request for listing schools
 - variables for `baseUrl`, `userLatitude`, and `userLongitude`
 
-## Deployment ideas
+## Deployment
 
-You can deploy this on services like Railway, Render, or a VPS with Node.js and MySQL support.
-If you want, I can also prepare deployment files for one of those platforms next.
+This API is deployed on Railway and connected to a Railway MySQL database.
