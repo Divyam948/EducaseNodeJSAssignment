@@ -1,0 +1,79 @@
+{
+  "info": {
+    "_postman_id": "0a2c9b79-f2ca-4d56-9cb8-63b8391f0bcc",
+    "name": "School Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Postman collection for adding schools and listing them by proximity."
+  },
+  "item": [
+    {
+      "name": "Add School",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Fertilizer Public School\",\n  \"address\": \"Kribhco Shyam Nagar, Piprola, Jalalabad Road, Shahjahanpur, Uttar Pradesh\",\n  \"latitude\": 27.883743,\n  \"longitude\": 79.91225\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/addSchool",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "addSchool"
+          ]
+        },
+        "description": "Creates a new school after validating the payload.\n\nExpected success response: 201 Created\nExpected error response: 400 Bad Request when any field is missing or invalid."
+      },
+      "response": []
+    },
+    {
+      "name": "List Schools By Proximity",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/listSchools?latitude={{userLatitude}}&longitude={{userLongitude}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "listSchools"
+          ],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "{{userLatitude}}"
+            },
+            {
+              "key": "longitude",
+              "value": "{{userLongitude}}"
+            }
+          ]
+        },
+        "description": "Returns all schools sorted from nearest to farthest based on the user's latitude and longitude.\n\nExpected success response: 200 OK\nExpected error response: 400 Bad Request when query parameters are invalid."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "userLatitude",
+      "value": "27.883743"
+    },
+    {
+      "key": "userLongitude",
+      "value": "79.91225"
+    }
+  ]
+}
